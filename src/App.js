@@ -31,7 +31,7 @@ const App = () => {
           .filter(filterByCountry(name))
           .filter(filterByPopulation(population))
           .sort(sortByName(sort)),
-        N,
+        Number(N),
       ),
     );
   };
@@ -56,7 +56,7 @@ const App = () => {
         <select name="sort">
           <option value="">--Sort order--</option>
           <option value="ascend">Ascend</option>
-          <option value="Descend">Descend</option>
+          <option value="descend">Descend</option>
         </select>
         <input
           type="number"

@@ -1,6 +1,6 @@
 export const filterByCountry =
   (country) =>
-  ({ name: { common } }) => {
+  ({ name: { common } = {} } = {}) => {
     if (!country) {
       return true;
     }
@@ -12,7 +12,7 @@ export const filterByCountry =
 
 export const filterByPopulation =
   (number) =>
-  ({ population }) => {
+  ({ population } = {}) => {
     if (!number) {
       return true;
     }
@@ -22,8 +22,8 @@ export const filterByPopulation =
 
 export const sortByName =
   (order) =>
-  ({ name: { common: a } }, { name: { common: b } }) => {
-    if (!order) {
+  ({ name: { common: a } = {} } = {}, { name: { common: b } = {} } = {}) => {
+    if (order !== 'ascend' && order !== 'descend') {
       return 0;
     }
 
