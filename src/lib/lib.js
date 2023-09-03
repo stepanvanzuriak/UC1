@@ -3,3 +3,7 @@ export const filterByCountry = (country) => ({name: {common}}) => {
 
   return regex.test(common);
 }
+
+export const filterByPopulation = (number) => ({population}) => {
+  return population < number * 10 ** 6
+};

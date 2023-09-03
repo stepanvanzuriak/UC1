@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { API_URL } from './lib/constants';
-import { filterByCountry } from './lib/lib';
+import { filterByCountry, filterByPopulation } from './lib/lib';
 import axios from 'axios';
 import './App.css';
 
@@ -9,7 +9,8 @@ const App = () => {
   const onSubmit = (e) => {
     e.preventDefault();
 
-    console.log(countries.filter(filterByCountry('sT', 'i')));
+    console.log(countries.filter(filterByCountry('sT')));
+    console.log(countries.filter(filterByPopulation(1)));
   };
 
   useEffect(() => {
@@ -26,7 +27,7 @@ const App = () => {
     <form onSubmit={onSubmit} className="main-form">
       <h1>Filter countries</h1>
       <input placeholder="Name" />
-      <input placeholder="Population" />
+      <input placeholder="Population in millions" />
       <input placeholder="Sort by country" />
       <input placeholder="Number of records" />
       <input type="submit" />
