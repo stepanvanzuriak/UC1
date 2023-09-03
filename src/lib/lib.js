@@ -1,9 +1,19 @@
-export const filterByCountry = (country) => ({name: {common}}) => {
-  const regex = new RegExp(country, 'i')
+export const filterByCountry =
+  (country) =>
+  ({ name: { common } }) => {
+    const regex = new RegExp(country, 'i');
 
-  return regex.test(common);
-}
+    return regex.test(common);
+  };
 
-export const filterByPopulation = (number) => ({population}) => {
-  return population < number * 10 ** 6
-};
+export const filterByPopulation =
+  (number) =>
+  ({ population }) => {
+    return population < number * 10 ** 6;
+  };
+
+export const sortByName =
+  (order) =>
+  ({ name: { common: a } }, { name: { common: b } }) => {
+    return order === 'ascend' ? a.localeCompare(b) : b.localeCompare(a);
+  };

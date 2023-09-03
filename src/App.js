@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { API_URL } from './lib/constants';
-import { filterByCountry, filterByPopulation } from './lib/lib';
+import { filterByCountry, filterByPopulation, sortByName } from './lib/lib';
 import axios from 'axios';
 import './App.css';
 
@@ -11,6 +11,7 @@ const App = () => {
 
     console.log(countries.filter(filterByCountry('sT')));
     console.log(countries.filter(filterByPopulation(1)));
+    console.log(countries.sort(sortByName('ascend')))
   };
 
   useEffect(() => {
