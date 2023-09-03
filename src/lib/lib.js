@@ -8,12 +8,13 @@ export const filterByCountry =
 
 export const filterByPopulation =
   (number) =>
-  ({ population }) => {
-    return population < number * 10 ** 6;
-  };
+  ({ population }) =>
+    population < number * 10 ** 6;
 
 export const sortByName =
   (order) =>
   ({ name: { common: a } }, { name: { common: b } }) => {
     return order === 'ascend' ? a.localeCompare(b) : b.localeCompare(a);
   };
+
+export const pagination = (data, N) => data.slice(0, N);
